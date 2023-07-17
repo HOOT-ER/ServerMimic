@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{06A201C6-2269-447F-9389-B4804C70F7EB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MessagePatch</RootNamespace>
+    <AssemblyName>MessagePatch</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Accessibility" />
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="Cronos">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Cronos.dll</HintPath>
+    </Reference>
+    <Reference Include="CurvedTextMeshPro">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\CurvedTextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="DelaunayER">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\DelaunayER.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyRoads3Dv3">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\EasyRoads3Dv3.dll</HintPath>
+    </Reference>
+    <Reference Include="EZhex1991.EZSoftBone">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\EZhex1991.EZSoftBone.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.BurstCloth">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.BurstCloth.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Console">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Flexbox">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Flexbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.GoogleSheets">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.GoogleSheets.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Input">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Network">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Raknet">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Raknet.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Rcon">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Rcon.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Skeleton">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Skeleton.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Sqlite">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.SteamNetworking">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.SteamNetworking.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Steamworks.Win64">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Steamworks.Win64.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.System">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.System.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Unity">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.UnityEngine">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.UnwrapBaker.Settings">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.UnwrapBaker.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Fleck">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Fleck.dll</HintPath>
+    </Reference>
+    <Reference Include="GA">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\GA.dll</HintPath>
+    </Reference>
+    <Reference Include="I18N">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\I18N.dll</HintPath>
+    </Reference>
+    <Reference Include="I18N.CJK">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\I18N.CJK.dll</HintPath>
+    </Reference>
+    <Reference Include="I18N.MidEast">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\I18N.MidEast.dll</HintPath>
+    </Reference>
+    <Reference Include="I18N.Other">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\I18N.Other.dll</HintPath>
+    </Reference>
+    <Reference Include="I18N.Rare">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\I18N.Rare.dll</HintPath>
+    </Reference>
+    <Reference Include="I18N.West">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\I18N.West.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip.Reduced">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="LZ4">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="LZ4pn">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\LZ4pn.dll</HintPath>
+    </Reference>
+    <Reference Include="Melanchall.DryWetMidi">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Melanchall.DryWetMidi.dll</HintPath>
+    </Reference>
+    <Reference Include="MidiJack">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\MidiJack.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Data.Sqlite">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Mono.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Posix">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Mono.Posix.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.WebBrowser">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Mono.WebBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="MP3Sharp">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\MP3Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Burst">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Unity.Recorder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Base">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Unity.Recorder.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TerrainTools">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Unity.TerrainTools.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.AndroidJNIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.ARModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.ClusterRendererModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.DSPGraphModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.HotReloadModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.LocalizationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.ProfilerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.StreamingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.SubstanceModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.SubsystemsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.TextCoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.TLSModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.UmbraModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.UNETModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.VFXModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>..\..\Rust Server\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="doubleMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
