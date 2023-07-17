@@ -7,9 +7,9 @@ public class ExamplePatch
     private class PlayerPatch
     {
         [HarmonyPrefix]
-        private static void Prefix(Chat.ChatChannel targetChannel, ulong userId, string username, string message, BasePlayer player = null)
+        private static void Prefix(string username, string message)
         {
-            Chat.Broadcast(message);
+            Chat.Broadcast(username + " says " + message);
         }
     }
 }
